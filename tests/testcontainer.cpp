@@ -54,12 +54,15 @@ TEST(TContainerTest, PrintAirplanesTest)
 TEST(TContainerTest, MultiMethodTest)
 {
     TContainer c;
-    std::istringstream in("1 10 10 10 10 10 2 10 10 10 10 3 20 20 20 20 20");
+    std::istringstream in("1 10 10 10 10 10 2 10 10 10 10 3 20 20 20 20 20 4 30 30 30 30 30");
     c.Read(in);
     std::ostringstream out;
     c.MultiMethod(out);
     std::string result = out.str();
     EXPECT_NE(result.find("Airplane and Train"), std::string::npos);
     EXPECT_NE(result.find("Airplane and Boat"), std::string::npos);
+    EXPECT_NE(result.find("Airplane and Truck"), std::string::npos);
     EXPECT_NE(result.find("Train and Boat"), std::string::npos);
+    EXPECT_NE(result.find("Train and Truck"), std::string::npos);
+    EXPECT_NE(result.find("Boat and Truck"), std::string::npos);
 }
