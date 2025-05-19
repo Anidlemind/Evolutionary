@@ -50,8 +50,8 @@ TEST(TTransportTest, ReadAndPrint)
 
 TEST(TTransportTest, IdealTime)
 {
-    std::istringstream in("2 10 10 10");
+    std::istringstream in("2 10 10 10 10");
     auto* transport = Transport::Read(in);
-    EXPECT_EQ(transport->IdealTime(), 1.0);
+    EXPECT_DOUBLE_EQ(transport->IdealTime(), 1.0);
     delete transport;
 }
