@@ -12,10 +12,6 @@ public:
     virtual Type GetType() const = 0;
     virtual std::string GetTypeStr() const = 0;
 
-    void MultiMethod(ITransport* other, std::ostream& os) {
-        os << this->GetTypeStr() << " and " << other->GetTypeStr() << "\n";
-    }
-
     double IdealTime() const {
         return static_cast<double>(distance) / speed;
     }
