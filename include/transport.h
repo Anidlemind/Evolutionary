@@ -14,6 +14,7 @@ public:
 protected:
     int speed;
     int distance;
+    double weight;
 };
 
 namespace Transport {
