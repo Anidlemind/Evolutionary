@@ -22,6 +22,9 @@ int main() {
         std::cout << "=== AIRPLANES ===\n";
         container.PrintAirplanes(std::cout);
 
+        std::cout << "=== MULTIMODAL ===\n";
+        container.MultiMethod(std::cout);
+
         std::cout << "=== SUCCESS ===\n";
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << "\n";

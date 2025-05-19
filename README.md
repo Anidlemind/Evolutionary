@@ -1,5 +1,26 @@
 # Evolutionary programming C++
 
+To build:
+
+```
+git clone git@github.com:Anidlemind/Evolutionary.git
+cd Evolutionary
+mkdir bin && cd bin && cmake ../ && make all
+```
+
+Running tests:
+
+```
+./tests
+```
+
+Running the client program:
+
+```
+./main
+```
+
+
 # Task 1
 
 ## Описание
@@ -118,3 +139,17 @@
 |ITransport::MultiMethod(сигнатура)|ITransport|
 |ITransport::MultiMethod(тело)|ITransport::GetTypeStr|
 |TContainer::MultiMethod|ITransport::MultiMethod|
+
+# Task 7
+
+## Описание
+
+Было получено задание добавления нового объекта для мультиметода. В силу уже добавленного объекта `Boat`, был добавлен объект `Truck`. Добавлены новые файлы `truck.cpp`, `truck.h`, минимальные изменения в тестах.
+
+## Новые Зависимости Артефактов
+
+Добавились, соответствующие всем предыдущим зависимостям для видов транспорта, зависимости.
+
+## Изменения в Модульной Структуре
+
+Два новых файла, описанные выше.

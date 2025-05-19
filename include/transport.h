@@ -4,7 +4,7 @@
 
 class ITransport {
 public:
-    enum Type { AIRPLANE, TRAIN, BOAT };
+    enum Type { AIRPLANE, TRAIN, BOAT, TRUCK };
 
     virtual ~ITransport() = default;
     virtual void Read(std::istream&) = 0;
