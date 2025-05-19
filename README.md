@@ -81,3 +81,40 @@
 ## Описание
 
 Было получено задание добавления нового поля Вес для транспорта. Что привело к изменению в тестах, функциях вывода каждого из реализуемых классов транспорта.
+
+# Task 5
+
+## Описание
+
+Было получено задание добавления функции вывода только для Самолетов внутри Контейнера. Добавлена функция `PrintAirplanes(std::ostream&)`, `enum Type` типов транспортных средств внутри `transport.h` и функция `GetType()`, возвращающая этот самый тип. Добавлен тест на функцию `PrintAirplanes(std::ostream&)`.
+
+## Новые Зависимости Артефактов
+
+| Артефакт | Прямая зависимость | Косвенная зависимость |
+|-------------|-------------|-------------|
+|TAirplane::GetType|ITransport::Type||
+|TTrain::GetType|ITransport::Type||
+|TBoat::GetType|ITransport::Type||
+|ITransport::GetType|TAirplane::GetType, TTrain::GetType, TBoat::GetType
+
+## Изменения в Структуре Модулей
+
+Добавлен новый модуль `container_airplanes.cpp`, реализующий функцию `PrintAirplanes`, является косвенно подключенным к `main.cpp`
+
+# Task 6
+
+## Описание
+
+Было получено задание добавления мультиметода. Было добавлено: метод `GetTypeStr()` для получения строкового представления типа Транспорта; метод `MultiMethod(ITransport*, std::ostream&)` для класса `ITransport`, выводящий строку с двумя типами - Транспорта, вызывающего функцию, и Транспорта из аргументов функции; метод `MultiMethod(std::ostream&)` для класса `TContainer`, выводящий соответствующую предыдущему методу строку и описание пары классов для всех упорядоченных пар из контейнера. Добавлены соответствующие тесты.
+
+## Новые Зависимости Артефактов
+
+| Артефакт | Прямая зависимость | Косвенная зависимость |
+|-------------|-------------|-------------|
+|TAirplane::GetTypeStr|||
+|TTrain::GetTypeStr|||
+|TBoat::GetTypeStr|||
+|ITransport::GetTypeStr|TAirplane::GetTypeStr, TTrain::GetTypeStr, TBoat::GetTypeStr
+|ITransport::MultiMethod(сигнатура)|ITransport|
+|ITransport::MultiMethod(тело)|ITransport::GetTypeStr|
+|TContainer::MultiMethod|ITransport::MultiMethod|

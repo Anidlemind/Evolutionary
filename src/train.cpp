@@ -7,3 +7,11 @@ void TTrain::Read(std::istream& is) {
 void TTrain::Print(std::ostream& os) const {
     os << "Train specs:\n" << "Speed: " << speed << "\nDistance: " << distance << "\nWeight: " << weight << "\nWagons: " << wagons << "\n";
 }
+
+ITransport::Type TTrain::GetType() const {
+    return ITransport::TRAIN;
+}
+
+std::string TTrain::GetTypeStr() const {
+    return "Train";
+}

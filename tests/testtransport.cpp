@@ -55,3 +55,15 @@ TEST(TTransportTest, IdealTime)
     EXPECT_DOUBLE_EQ(transport->IdealTime(), 1.0);
     delete transport;
 }
+
+TEST(TTransportTest, MutliMethod)
+{
+    std::istringstream in1("2 10 10 10 10");
+    auto* transport1 = Transport::Read(in1);
+    std::istringstream in2("1 10 10 10 10 10");
+    auto* transport2 = Transport::Read(in2);
+    std::ostringstream os;
+    transport1->MultiMethod(transport2, os);
+    std::string result = os.str();
+    EXPECT_NE(result.find("Train and Airplane"), std::string::npos);
+}

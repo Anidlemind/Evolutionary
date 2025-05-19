@@ -19,6 +19,9 @@ int main() {
         std::cout << "=== CONTAINER INSIDES ===\n";
         container.Print(std::cout);
 
+        std::cout << "=== AIRPLANES ===\n";
+        container.PrintAirplanes(std::cout);
+
         std::cout << "=== SUCCESS ===\n";
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << "\n";
