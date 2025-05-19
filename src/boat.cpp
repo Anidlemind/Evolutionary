@@ -11,3 +11,7 @@ void TBoat::Print(std::ostream& os) const {
 ITransport::Type TBoat::GetType() const {
     return ITransport::BOAT;
 }
+
+std::string TBoat::GetTypeStr() const {
+    return "Boat";
+}

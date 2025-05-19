@@ -11,3 +11,7 @@ void TTrain::Print(std::ostream& os) const {
 ITransport::Type TTrain::GetType() const {
     return ITransport::TRAIN;
 }
+
+std::string TTrain::GetTypeStr() const {
+    return "Train";
+}

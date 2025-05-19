@@ -100,3 +100,21 @@
 ## Изменения в Структуре Модулей
 
 Добавлен новый модуль `container_airplanes.cpp`, реализующий функцию `PrintAirplanes`, является косвенно подключенным к `main.cpp`
+
+# Task 6
+
+## Описание
+
+Было получено задание добавления мультиметода. Было добавлено: метод `GetTypeStr()` для получения строкового представления типа Транспорта; метод `MultiMethod(ITransport*, std::ostream&)` для класса `ITransport`, выводящий строку с двумя типами - Транспорта, вызывающего функцию, и Транспорта из аргументов функции; метод `MultiMethod(std::ostream&)` для класса `TContainer`, выводящий соответствующую предыдущему методу строку и описание пары классов для всех упорядоченных пар из контейнера. Добавлены соответствующие тесты.
+
+## Новые Зависимости Артефактов
+
+| Артефакт | Прямая зависимость | Косвенная зависимость |
+|-------------|-------------|-------------|
+|TAirplane::GetTypeStr|||
+|TTrain::GetTypeStr|||
+|TBoat::GetTypeStr|||
+|ITransport::GetTypeStr|TAirplane::GetTypeStr, TTrain::GetTypeStr, TBoat::GetTypeStr
+|ITransport::MultiMethod(сигнатура)|ITransport|
+|ITransport::MultiMethod(тело)|ITransport::GetTypeStr|
+|TContainer::MultiMethod|ITransport::MultiMethod|

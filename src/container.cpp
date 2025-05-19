@@ -52,3 +52,13 @@ ITransport* TContainer::Get(int id) const {
     }
     return arr[id];
 }
+
+void TContainer::MultiMethod(std::ostream& os) const {
+    for (int i = 0; i < len; ++i) {
+        for (int j = i+1; j < len; ++j) {
+            arr[i]->MultiMethod(arr[j], os);
+            arr[i]->Print(os);
+            arr[j]->Print(os);
+        }
+    }
+}

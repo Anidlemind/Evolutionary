@@ -11,3 +11,7 @@ void TAirplane::Print(std::ostream& os) const {
 ITransport::Type TAirplane::GetType() const {
     return ITransport::AIRPLANE;
 }
+
+std::string TAirplane::GetTypeStr() const {
+    return "Airplane";
+}
