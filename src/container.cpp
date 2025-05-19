@@ -35,6 +35,7 @@ void TContainer::Print(std::ostream& os) const {
     for (size_t i = 0; i < len; ++i) {
         os << i << ": ";
         arr[i]->Print(os);
+        os << "Ideal Time: " << arr[i]->IdealTime() << '\n';
     }
 }
 
