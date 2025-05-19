@@ -26,7 +26,7 @@ TEST(TContainerTest, ReadAndPrint)
     std::ostringstream out;
     c.Print(out);
     std::string result = out.str();
-    EXPECT_EQ(result, "Container with 2 elements:\n0: Airplane specs:\nSpeed: 10\nDistance: 10\nRange: 10\nCapacity: 10\n1: Train specs:\nSpeed: 10\nDistance: 10\nWagons: 10\nIdeal Time: 1\n");
+    EXPECT_EQ(result, "Container with 2 elements:\n0: Airplane specs:\nSpeed: 10\nDistance: 10\nRange: 10\nCapacity: 10\nIdeal Time: 1\n1: Train specs:\nSpeed: 10\nDistance: 10\nWagons: 10\nIdeal Time: 1\n");
 }
 
 TEST(TContainerTest, GetTest)
