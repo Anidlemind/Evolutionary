@@ -20,19 +20,19 @@ TEST(TContainerTest, AddTest)
 TEST(TContainerTest, ReadAndPrint)
 {
     TContainer c;
-    std::istringstream in("1 10 10 10 10 2 10 10 10");
+    std::istringstream in("1 10 10 10 10 10 2 10 10 10 10");
     c.Read(in);
     EXPECT_EQ(c.Size(), 2);
     std::ostringstream out;
     c.Print(out);
     std::string result = out.str();
-    EXPECT_EQ(result, "Container with 2 elements:\n0: Airplane specs:\nSpeed: 10\nDistance: 10\nRange: 10\nCapacity: 10\nIdeal Time: 1\n1: Train specs:\nSpeed: 10\nDistance: 10\nWagons: 10\nIdeal Time: 1\n");
+    EXPECT_EQ(result, "Container with 2 elements:\n0: Airplane specs:\nSpeed: 10\nDistance: 10\nWeight: 10\nRange: 10\nCapacity: 10\nIdeal Time: 1\n1: Train specs:\nSpeed: 10\nDistance: 10\nWeight: 10\nWagons: 10\nIdeal Time: 1\n");
 }
 
 TEST(TContainerTest, GetTest)
 {
     TContainer c;
-    std::istringstream in("3 10 10 10 10 2 10 10 10");
+    std::istringstream in("3 10 10 10 10 10 2 10 10 10 10");
     c.Read(in);
     EXPECT_EQ(c.Get(0)->IdealTime(), 1.0);
     EXPECT_NO_THROW(c.Get(0));
