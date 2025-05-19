@@ -19,13 +19,6 @@ int main() {
         std::cout << "=== CONTAINER INSIDES ===\n";
         container.Print(std::cout);
 
-        if (container.Size() > 0) {
-            std::cout << "=== CONTAINER'S IDEAL TIMES ===\n";
-            for (int i = 0; i < container.Size(); ++i) {
-                std::cout << i << ": Ideal time is: " << container.Get(i)->IdealTime() << '\n';
-            }
-        }
-
         std::cout << "=== SUCCESS ===\n";
     } catch (const std::exception& e) {
         std::cerr << "Error: " << e.what() << "\n";
