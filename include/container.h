@@ -11,6 +11,7 @@ public:
     void Read(std::istream& is);
     void Print(std::ostream& os) const;
     int Size() const;
+    ITransport* Get(int id) const;
 
 private:
     enum {MAX_SIZE = 5};

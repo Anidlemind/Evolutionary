@@ -28,3 +28,14 @@ TEST(TContainerTest, ReadAndPrint)
     std::string result = out.str();
     EXPECT_EQ(result, "Container with 2 elements:\n0: Airplane specs:\nSpeed: 10\nDistance: 10\nRange: 10\nCapacity: 10\n1: Train specs:\nSpeed: 10\nDistance: 10\nWagons: 10\n");
 }
+
+TEST(TContainerTest, GetTest)
+{
+    TContainer c;
+    std::istringstream in("3 10 10 10 10 2 10 10 10");
+    c.Read(in);
+    EXPECT_EQ(c.Get(0)->IdealTime(), 1.0);
+    EXPECT_NO_THROW(c.Get(0));
+    EXPECT_THROW(c.Get(3), std::out_of_range);
+    EXPECT_THROW(c.Get(10), std::range_error);
+}
