@@ -1,6 +1,7 @@
 #include "../include/transport.h"
 #include "airplane.h"
 #include "train.h"
+#include "boat.h"
 
 namespace Transport {
 
@@ -15,6 +16,9 @@ ITransport* Read(std::istream& is) {
             break;
         case 2:
             transport = new TTrain;
+            break;
+        case 3:
+            transport = new TBoat;
             break;
         default:
             throw std::invalid_argument("Unsupported transport type");

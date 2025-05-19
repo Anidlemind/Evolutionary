@@ -2,6 +2,7 @@
 #include <transport.h>
 #include <airplane.h>
 #include <train.h>
+#include <boat.h>
 
 TEST(TAirplaneTest, ReadAndPrint)
 {
@@ -23,6 +24,17 @@ TEST(TTrainTest, ReadAndPrint)
     t.Print(out);
     std::string result = out.str();
     EXPECT_EQ(result, "Train specs:\nSpeed: 10\nDistance: 10\nWagons: 10\n");
+}
+
+TEST(TBoatTest, ReadAndPrint)
+{
+    TBoat b;
+    std::istringstream in("10 10 10 10");
+    b.Read(in);
+    std::ostringstream out;
+    b.Print(out);
+    std::string result = out.str();
+    EXPECT_EQ(result, "Boat specs:\nSpeed: 10\nDistance: 10\nCapacity: 10\nMasts count: 10\n");
 }
 
 TEST(TTransportTest, ReadAndPrint)
