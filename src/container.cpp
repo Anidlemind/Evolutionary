@@ -41,3 +41,13 @@ void TContainer::Print(std::ostream& os) const {
 int TContainer::Size() const {
     return len;
 }
+
+ITransport* TContainer::Get(int id) const {
+    if (id > MAX_SIZE) {
+        throw std::range_error("Id is bigger than maximum size of the container");
+    }
+    if (id > len) {
+        throw std::out_of_range("Id is bigger than current size of the container");
+    }
+    return arr[id];
+}

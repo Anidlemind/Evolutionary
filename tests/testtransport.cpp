@@ -47,3 +47,11 @@ TEST(TTransportTest, ReadAndPrint)
     std::string result = out.str();
     EXPECT_EQ(result, "Train specs:\nSpeed: 10\nDistance: 10\nWagons: 10\n");
 }
+
+TEST(TTransportTest, IdealTime)
+{
+    std::istringstream in("2 10 10 10");
+    auto* transport = Transport::Read(in);
+    EXPECT_EQ(transport->IdealTime(), 1.0);
+    delete transport;
+}
